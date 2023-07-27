@@ -1,1 +1,41 @@
-/*# sourceMappingURL=style.css.map */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 400px;
+  margin: auto;
+}
+
+/* Mobile Approach First */
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "current current" "hourly hourly" "fiveday fiveday" "feelslike humidity";
+  border: 1px solid;
+  gap: 16px;
+}
+.container > article {
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 16px;
+}
+.container #current-forecast {
+  grid-area: current;
+}
+.container #hourly-forecast {
+  grid-area: hourly;
+}
+.container #five-day-forecast {
+  grid-area: fiveday;
+}
+.container #feels-like {
+  grid-area: feelslike;
+}
+.container #humidity {
+  grid-area: humidity;
+}/*# sourceMappingURL=style.css.map */

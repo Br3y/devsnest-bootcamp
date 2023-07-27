@@ -1,0 +1,50 @@
+$spacing-medium:8px;
+$spacing-regular:16px;
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    width:400px;
+    margin:auto;
+}
+
+/* Mobile Approach First */
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "current current"
+    "hourly hourly"
+    "fiveday fiveday"
+    "feelslike humidity";
+    border:1px solid;
+    gap: $spacing-regular;
+    > article{
+        border:1px solid;
+        border-radius: $spacing-regular;
+        padding:$spacing-regular;
+    }
+    #current-forecast{
+        grid-area:current;
+    }
+    #hourly-forecast{
+        grid-area:hourly;
+    }
+    #five-day-forecast{
+        grid-area:fiveday;
+    }
+    #feels-like{
+        grid-area:feelslike;
+    }
+    #humidity{
+        grid-area:humidity;
+    }
+}
