@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     // document.querySelector("#currency-converter").addEventListener("submit", (event) => {
     document.querySelector("#currency-converter").addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -13,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: myHeaders
         };
         // old way
-
         // fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`, requestOptions)
         //     .then(response => response.json())
         //     .then(data => {
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //          to: ${to}
         //          result: ${result.toFixed(2)}`;
 
+        
         // new way of api with try cath 
         try{
             let response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`, requestOptions)
