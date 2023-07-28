@@ -12,12 +12,21 @@ body {
 }
 
 /* Mobile Approach First */
+h1, h2 {
+  margin: 0;
+}
+
+p {
+  margin: 8px;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "current current" "hourly hourly" "fiveday fiveday" "feelslike humidity";
   border: 1px solid;
   gap: 16px;
+  padding: 16px;
 }
 .container > article {
   border: 1px solid;
@@ -26,16 +35,47 @@ body {
 }
 .container #current-forecast {
   grid-area: current;
+  text-align: center;
+}
+.container #current-forecast .temperature {
+  font-size: 4rem;
+}
+.container #current-forecast .description {
+  text-transform: capitalize;
+}
+.container #current-forecast .description, .container #current-forecast .min-max-temp {
+  font-size: 1rem;
+  font-weight: 600;
 }
 .container #hourly-forecast {
   grid-area: hourly;
+  text-align: center;
+}
+.container #hourly-forecast .hourly-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(100px, 1fr);
+  overflow-x: auto;
+  gap: 8px;
+}
+.container #hourly-forecast .hourly-container .icon {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+.container #hourly-forecast .hourly-container .hourly-temperature {
+  font-size: 1rem;
+  font-weight: 600;
 }
 .container #five-day-forecast {
   grid-area: fiveday;
 }
 .container #feels-like {
   grid-area: feelslike;
+  text-align: center;
 }
 .container #humidity {
   grid-area: humidity;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
