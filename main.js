@@ -1,24 +1,26 @@
+// DECLARATION
 const API_KEY = "26ebec346666c60ecc110306d8460dba";
+const formatTemperature = (temp) => `${temp?.toFixed(1)}°`
+const createIconUrl = (icon) => `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+// GET API FROM WEATHERMAP
 const getCurrentWeatherData = async () => {
     const city = "calamba";
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
     return response.json();
 }
-
-const formatTemperature = (temp) => `${temp?.toFixed(1)}°`
-const createIconUrl = (icon) => `https://openweathermap.org/img/wn/${icon}@2x.png`;
-
 const getHourlyForecast = async ({ name: city }) => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
     const data = await response.json();
     // console.log(data);
 
     return data.list.map(forecast => {
-        const { main: { temp, temp_max, temp_min }, dt, dt_txt, weather: [{ description, icon }] } = forecast;
+        const { main: {  temp, temp_max, temp_min }, dt, dt_txt, weather: [{ description, icon }] } = forecast;
         return { temp, temp_max, temp_min, dt, dt_txt, description, icon }
     })
 }
 
+// LOAD API and input in HTML using textContent
 const loadCurrentForecast = ({ name, main: { temp, temp_max, temp_min }, weather: [{ description }] }) => {
     const currentForecasatElement = document.querySelector("#current-forecast");
     currentForecasatElement.querySelector(".city").textContent = name;
@@ -50,6 +52,7 @@ const loadHumidity = ({ main: { humidity } }) => {
     container.querySelector(".humidity-value").textContent = `${humidity} %`;
 }
 
+// CALLING function
 document.addEventListener("DOMContentLoaded", async () => {
     const currentWeather = await getCurrentWeatherData();
     loadCurrentForecast(currentWeather);
