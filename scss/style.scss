@@ -59,12 +59,42 @@ p{
             }
             .hourly-temperature{
                 font-size:$font-regular;
-                font-weight:$font-semibold;
+                font-weight:$font-semibold; 
             }
         }
     }
     #five-day-forecast{
         grid-area:fiveday;
+        text-align:center;
+        
+        .day-wise-forecast{
+            display:grid;
+            grid-auto-flow:row;
+            grid-template: auto / repeat(4, 1fr);
+            gap: $spacing-regular;
+            place-items:center;
+
+            .min-temp, .max-temp{
+                font-size:$font-regular;
+                font-weight:$font-semibold;
+            }
+
+            .min-temp{
+                opacity: 50%;
+            }
+            .max-temp{
+                justify-self: end;
+            }
+            
+            .icon{
+                width:75px;
+                height:75px;
+            }
+            .day{
+                text-transform:capitalize;
+                justify-self: start;
+            }
+        }
     }
     #feels-like{
         grid-area:feelslike;

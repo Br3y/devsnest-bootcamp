@@ -70,6 +70,32 @@ p {
 }
 .container #five-day-forecast {
   grid-area: fiveday;
+  text-align: center;
+}
+.container #five-day-forecast .day-wise-forecast {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto/repeat(4, 1fr);
+  gap: 16px;
+  place-items: center;
+}
+.container #five-day-forecast .day-wise-forecast .min-temp, .container #five-day-forecast .day-wise-forecast .max-temp {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.container #five-day-forecast .day-wise-forecast .min-temp {
+  opacity: 50%;
+}
+.container #five-day-forecast .day-wise-forecast .max-temp {
+  justify-self: end;
+}
+.container #five-day-forecast .day-wise-forecast .icon {
+  width: 75px;
+  height: 75px;
+}
+.container #five-day-forecast .day-wise-forecast .day {
+  text-transform: capitalize;
+  justify-self: start;
 }
 .container #feels-like {
   grid-area: feelslike;
