@@ -23,7 +23,7 @@ p {
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "current current" "hourly hourly" "fiveday fiveday" "feelslike humidity";
+  grid-template-areas: "search search" "current current" "hourly hourly" "fiveday fiveday" "feelslike humidity";
   border: 1px solid;
   gap: 16px;
   padding: 16px;
@@ -32,6 +32,12 @@ p {
   border: 1px solid;
   border-radius: 16px;
   padding: 16px;
+}
+.container #search {
+  grid-area: search;
+  font-size: 2rem;
+  border-radius: 1rem;
+  padding: 8px;
 }
 .container #current-forecast {
   grid-area: current;
