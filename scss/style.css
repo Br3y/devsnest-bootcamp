@@ -7,12 +7,13 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  width: 400px;
-  margin: auto;
+  max-width: 800px;
+  margin: 16px auto;
 }
 
 /* Mobile Approach First */
-h1, h2 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -27,6 +28,8 @@ p {
   border: 1px solid;
   gap: 16px;
   padding: 16px;
+  margin: 16px;
+  border-radius: 16px;
 }
 .container > article {
   border: 1px solid;
@@ -49,7 +52,8 @@ p {
 .container #current-forecast .description {
   text-transform: capitalize;
 }
-.container #current-forecast .description, .container #current-forecast .min-max-temp {
+.container #current-forecast .description,
+.container #current-forecast .min-max-temp {
   font-size: 1rem;
   font-weight: 600;
 }
@@ -85,7 +89,8 @@ p {
   gap: 16px;
   place-items: center;
 }
-.container #five-day-forecast .day-wise-forecast .min-temp, .container #five-day-forecast .day-wise-forecast .max-temp {
+.container #five-day-forecast .day-wise-forecast .min-temp,
+.container #five-day-forecast .day-wise-forecast .max-temp {
   font-size: 1rem;
   font-weight: 600;
 }
@@ -110,4 +115,11 @@ p {
 .container #humidity {
   grid-area: humidity;
   text-align: center;
+}
+
+@media (width >= 7f50px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "search search search search" "current current current current" "hourly hourly fiveday fiveday" "feelslike humidity fiveday fiveday";
+  }
 }/*# sourceMappingURL=style.css.map */
