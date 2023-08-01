@@ -15,6 +15,6 @@ $font-semibold: 600;
 body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
-    width:400px;
-    margin:auto;
+    max-width:800px;
+    margin:$spacing-regular auto;
 }
