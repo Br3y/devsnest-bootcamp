@@ -1,0 +1,19 @@
+:root {
+  --color-text: #262626;
+  --color-background: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: white;
+    --color-background: #262626;
+  }
+  .intro{
+    background-color:#9E9E9E
+  }
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
