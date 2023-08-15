@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+    <form action="" id="currency-converter">
+        <label for="from">FROM: </label>
+        <!-- <input type="text" name="from" id="from"> -->
+        <select name="from" id="from">
+            <option value="USD">USD</option>
+            <option value="NPR">NPR</option>
+            <option value="INR">INR</option>
+            <option value="PHP">PHP</option>
+            <option value="MAD">MAD</option>
+        </select>
+        <label for="to">TO: </label>
+        <!-- <input type="text" name="to" id="to"> -->
+        <select name="to" id="to">
+            <option value="USD">USD</option>
+            <option value="NPR">NPR</option>
+            <option value="INR">INR</option>
+            <option value="PHP">PHP</option>
+            <option value="MAD">MAD</option>
+        </select>
+        <label for="amount">AMOUNT: </label>
+        <input type="number" name="amount" id="amount">
+        <button type="submit">Convert</button>
+    </form>
+    <p class="result"></p>
+    <script src="main.js"></script>
+    <script src="country-list.js"></script>
+</body>
+    
+</html>
