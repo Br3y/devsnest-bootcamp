@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # devsnest bootcamp
 
 <strong>Frontend</strong>
